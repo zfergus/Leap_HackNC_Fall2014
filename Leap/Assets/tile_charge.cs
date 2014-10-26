@@ -11,16 +11,15 @@ public class tile_charge : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
-		intense = 20.0f; 
+		intense = 10.0f; 
 		resistance = 1.0f;
 		charged = false;
-		go = null;
 	}
 
 	// Update is called once per frame
 	void Update (){
 		if (charged) {
-			gameObject.light.intensity = 0.01f;
+			gameObject.light.intensity = 0.1f;
 			if (go!=null){ go.light.intensity = intense * resistance; }
 		} 
 		else {
@@ -29,10 +28,13 @@ public class tile_charge : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionStay(Collision col)
+	void OnCollisionEnter(Collision col)
 	{
 		if (col.gameObject.name == "resis") {
-			resistance = 0.1f;
+			resistance = 0.5f;
+		}
+		else if (col.gameObject.name == "resis2") {
+			resistance = 0.75f;
 		}
 
 //		resistance = col.gameObject.name == "resis" ? 0.1f : 1.0f;
@@ -45,15 +47,13 @@ public class tile_charge : MonoBehaviour {
 //		}
 		else if (col.gameObject.name == "batt") {
 			charged = true;
-		} 
-		else if (col.gameObject.name == "bulb" && charged) {
-			if(go != null){go.light.intensity = 0.0f;}
-			col.gameObject.light.intensity = intense * resistance;
+		}
+		else if (col.gameObject.name == "bulb" && charged == true) {
 			go = col.gameObject;
+			go.light.intensity = intense * resistance;
 		} 
 		else {
 			charged = false;
-			if(col.gameObject.name == "bulb"){ col.gameObject.light.intensity = 0.0f; }
 			resistance = 1.0f;
 		}
 //		else if (col.gameObject.name == "floor" || col.gameObject.name == "bulb") {
@@ -65,5 +65,15 @@ public class tile_charge : MonoBehaviour {
 //		else if(col.gameObject.name == "bulb" && gameObject.light.intensity > 0) {
 //			col.gameObject.light.intensity =1.0f;	
 //		}
+	}
+	void OnCollisionExit(Collision col)
+	{
+		if (col.gameObject.name == "batt") {
+			charged = false;
+			if(go != null){go.light.intensity = 0.0f;}
+		}
+		else if (col.gameObject.name == "resis" || col.gameObject.name == "resis2") {
+			resistance = 1.0f;
+		}
 	}
 }

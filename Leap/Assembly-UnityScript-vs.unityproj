@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{9632DDBE-3050-FDD0-03E8-BCCA58B33323}</ProjectGuid>
+	<ProjectGuid>{1A96968D-CFAA-23CF-50CF-142FB9EE35EA}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\LeapMotion\Editor\HandControllerEditor.cs" />
+     <Compile Include="Assets\NewBehaviourScript.js" />
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\LeapMotion\InteractionUtils (alpha)\readme.txt" />
      <None Include="Assets\LeapMotion\readme.txt" />
@@ -56,19 +56,9 @@
      <None Include="Assets\LeapMotion\Materials\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\LeapMotion\Shaders\LeapDistorted.shader" />
      <None Include="Assets\LeapMotion\Shaders\LeapUndistorted.shader" />
- <Reference Include="Assembly-UnityScript">
- <HintPath>C:/Users/Zachary/Documents/GitHub/Leap_HackNC_Fall2014/Leap/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
- </Reference>
  <Reference Include="LeapCSharp.NET3.5">
  <HintPath>C:/Users/Zachary/Documents/GitHub/Leap_HackNC_Fall2014/Leap/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-vs.csproj">
-      <Project>{DA9A2D6E-40F6-AB31-DF64-7C1C67DA9408}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

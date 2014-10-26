@@ -6,19 +6,19 @@ public class batt_to_bulb : MonoBehaviour {
 	public float breakForce = 10.0f;
 	public float breakTorque = 10.0f;
 	//public Light light;
-	public bool connected;
+	public bool connected, onTile;
 
 	// Use this for initialization
 	void Start () {
 		gameObject.light.intensity = 0;
-			connected = false;
+		connected = false; onTile = false;
 	}
 
 	void Update()
 	{
 		if (connected)
 			gameObject.light.intensity = 1.0f;
-		else {
+		else if(!onTile){
 			gameObject.light.intensity = 0.0f;
 		}
 	}
@@ -29,18 +29,21 @@ public class batt_to_bulb : MonoBehaviour {
 		//bool result = collision.gameObject.GetType().IsAssignableFrom(new Tile().GetType());
 		//Tile t = (Tile)collision.gameObject;
 		if (collision.gameObject.name == "batt") {
-			foreach (ContactPoint contact in collision.contacts) {
-				Debug.DrawRay (contact.point, contact.normal, Color.white);
-			}
-			SpringJoint spring = GetComponent<SpringJoint> ();       
-			if (spring != null)
-					Destroy (spring);
-			FixedJoint head_joint = gameObject.AddComponent<FixedJoint> ();
-			head_joint.breakForce = breakForce;
-			head_joint.breakTorque = breakTorque;
-			gameObject.light.intensity = 1;
-			connected = true;
-		}
+						foreach (ContactPoint contact in collision.contacts) {
+								Debug.DrawRay (contact.point, contact.normal, Color.white);
+						}
+						SpringJoint spring = GetComponent<SpringJoint> ();       
+						if (spring != null)
+								Destroy (spring);
+						FixedJoint head_joint = gameObject.AddComponent<FixedJoint> ();
+						head_joint.breakForce = breakForce;
+						head_joint.breakTorque = breakTorque;
+						gameObject.light.intensity = 1;
+						connected = true;
+			onTile = false;
+				} else if (collision.gameObject.name == "tile") {
+			onTile = true;
+				}
 //		else if(collision.gameObject.name == "tile" && collision.gameObject.light.intensity > 0){
 //			SpringJoint spring = GetComponent<SpringJoint> ();       
 //			if (spring != null)
@@ -53,6 +56,7 @@ public class batt_to_bulb : MonoBehaviour {
 //		}
 		else {
 			connected = false;
+			onTile = false;
 		}
 		
 		//else if(result && t.charged)

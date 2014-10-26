@@ -104,7 +104,7 @@
      <None Include="Assets\LeapMotion\Shaders\LeapDistorted.shader" />
      <None Include="Assets\LeapMotion\Shaders\LeapUndistorted.shader" />
  <Reference Include="LeapCSharp.NET3.5">
- <HintPath>C:/Users/Zachary/Programming/Unity/Leap/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
+ <HintPath>C:/Users/Zachary/Documents/GitHub/Leap_HackNC_Fall2014/Leap/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
