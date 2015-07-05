@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\tile_charge.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LeapMotion\DemoResources\Scripts\GrabHand.cs">
     <Files>
-      <File FileName="Assets\tile_charge.cs" Line="51" Column="63" />
-      <File FileName="Assets\batt_to_bulb.cs" Line="21" Column="19" />
+      <File FileName="Assets\LeapMotion\DemoResources\Scripts\GrabHand.cs" Line="163" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
