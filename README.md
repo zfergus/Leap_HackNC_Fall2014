@@ -1,6 +1,8 @@
 Leap_HackNC_Fall2014
 ====================
 
+<img src="hacknc_f14.png">
+
 Circuit Fun is a project created for HackNC Fall 2014, a 24-hour hackathon where
 participants make the best projects they can in the limited time. It was 
 developed in C# using the Unity game engine and the Leap Motion SDK. The object
