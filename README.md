@@ -1,7 +1,6 @@
-Circuit Fun
-====================
+# Circuit Fun
 
-<img src="screenshot.png">
+<p align="center"><img src="screenshot.png" width="75%"></p>
 
 Circuit Fun is a project created for HackNC Fall 2014, a 24-hour hackathon where
 participants make the best projects they can in the limited time. It was
